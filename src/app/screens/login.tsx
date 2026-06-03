@@ -20,7 +20,7 @@ export default function Login() {
 
       <Link href={'/screens/recoverPassword'} >Esqueceu a senha? Clique aqui!</Link>
 
-      <Button text="Fazar login"  onPress={() => {router.replace('/screens/home')}} />
+      <Button text="Fazer login"  onPress={() => {router.replace('/screens/home')}} />
       <Button text="Criar conta" onPress={() => {router.push('/screens/registerUser')}} />
     </View>
   );

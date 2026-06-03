@@ -1,14 +1,53 @@
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList } from 'react-native';
 import { useRouter } from 'expo-router';
 import Button from '../../components/button';
 import styles from '../../styles/HomeStyle';
+import Item from '../../components/item';
 
 function Home() {
     const router = useRouter();
 
+    const products = [
+        {id: '1', name: 'Detergente', description: 'Ypê 200ml', price: 1.5},
+        {id: '2', name: 'Arroz', description: 'Integral 5kg', price: 15},
+        {id: '3', name: 'Iceberg de pelúcia', description: 'Azul', price: 150},
+        {id: '4', name: 'Carro', description: 'Ford 2010', price: 1500}
+    ]
+
     return (
         <View style={styles.container}>
             <Text>Home</Text>
+
+            <View style={styles.productList}>
+
+                <FlatList
+                    keyExtractor={item => item.id}
+                    data={products}
+                    horizontal={true}
+                    renderItem={({ item }) => (
+                        <Item
+                            name={item.name}
+                            description={item.description}
+                            price={item.price}
+                        />
+                    )}
+                />
+            </View>
+
+            <TouchableOpacity
+                style={styles.addItemButton}
+                onPress={() => {router.push('/screens/registerItem')}}
+            >
+                <Text>+</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                style={styles.myProductsButton}
+                onPress={() => {router.push('/screens/myProducts')}}
+            >
+                <Text>Ver meus produtos</Text>
+            </TouchableOpacity>
+
             <Button text='logout' onPress={() => router.replace('/screens/login')} />
         </View>
     )
