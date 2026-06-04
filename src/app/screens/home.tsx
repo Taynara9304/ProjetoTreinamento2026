@@ -3,9 +3,20 @@ import { useRouter } from 'expo-router';
 import Button from '../../components/button';
 import styles from '../../styles/HomeStyle';
 import Item from '../../components/item';
+import SearchBar from '../../components/search-bar';
+import { useState } from 'react';
+
+interface Product {
+    id: string,
+    name: string,
+    description: string,
+    price: number
+}
 
 function Home() {
     const router = useRouter();
+
+    const [itemsFound, setItemsFound] = useState<Product[]>([]);
 
     const products = [
         {id: '1', name: 'Detergente', description: 'Ypê 200ml', price: 1.5},
@@ -18,14 +29,34 @@ function Home() {
         <View style={styles.container}>
             <Text>Home</Text>
 
-            <View style={styles.productList}>
+            <SearchBar onSearchDone={setItemsFound} />
 
+            <Text>oi</Text>
+            <View style={styles.productList}>
+                <FlatList
+                    keyExtractor={item => item.id}
+                    data={itemsFound}
+                    horizontal={true}
+                    ListEmptyComponent={<Text>Nenhum produto listado.</Text>}
+                    renderItem={({ item }) => (
+                        <Item
+                            id={item.id}
+                            name={item.name}
+                            description={item.description}
+                            price={item.price}
+                        />
+                    )}
+                />
+            </View>
+
+            <View style={styles.productList}>
                 <FlatList
                     keyExtractor={item => item.id}
                     data={products}
                     horizontal={true}
                     renderItem={({ item }) => (
                         <Item
+                            id={item.id}
                             name={item.name}
                             description={item.description}
                             price={item.price}
