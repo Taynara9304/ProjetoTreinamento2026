@@ -15,8 +15,8 @@ export default function Login() {
     <View style={styles.container}>
       <Text>Faça login</Text>
 
-      <Input text="Email" onChange={setEmail} />
-      <Input text="Senha" onChange={setPassword} />
+      <Input label='Email' placeholder="Digite seu email" onChange={setEmail} icon='mail-outline' />
+      <Input label='Senha' placeholder="Digite sua senha" onChange={setPassword} icon='lock-closed-outline' />
 
       <Link href={'/screens/recoverPassword'} >Esqueceu a senha? Clique aqui!</Link>
 

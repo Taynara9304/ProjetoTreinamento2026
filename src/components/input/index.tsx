@@ -1,18 +1,32 @@
 import { View, Text, TextInput } from 'react-native'
 import styles from './style';
+import { Ionicons } from '@expo/vector-icons';
 
 interface InputProps {
-    text: string,
-    onChange: any
+    label: string,
+    placeholder: string;
+    onChange: (text: string) => void;
+    icon?: React.ComponentProps<typeof Ionicons>['name']; 
 }
 
-function Input({ text, onChange }: InputProps) {
+function Input({ label, icon, placeholder, onChange }: InputProps) {
   return (
-      <TextInput
-        onChange={onChange}
-        style={styles.container}
-        placeholder={text}
-      />
+      <View style={styles.container}>
+          <Text style={styles.text}>{label}</Text>
+          <View style={styles.inputContainer}>
+              {icon && <Ionicons
+                  name={icon}
+                  style={styles.icon}
+                  size={24}
+              />}
+
+              <TextInput
+                onChangeText={onChange}
+                style={styles.input}
+                placeholder={placeholder}
+              />
+          </View>
+      </View>
   )
 }
 

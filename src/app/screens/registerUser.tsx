@@ -11,13 +11,15 @@ function Login() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordConfirmation, setPasswordConfirmation] = useState<string>();
 
   return (
     <View style={styles.container}>
       <Text>Register</Text>
-      <Input text='Nome' onChange={setName} />
-      <Input text='Email' onChange={setEmail} />
-      <Input text='Senha' onChange={setPassword} />
+      <Input label='Nome' placeholder='Digite seu nome' onChange={setName} icon='person-outline'  />
+      <Input label='Email' placeholder='Digite seu nome' onChange={setEmail} icon='mail-outline' />
+      <Input label='Senha' placeholder='Digite seu nome' onChange={setPassword} icon='lock-closed-outline' />
+      <Input label='Confirmação de senha' placeholder="Confirme sua senha" onChange={setPasswordConfirmation} icon='lock-closed-outline' />
 
       <Button text='Registrar' onPress={() => {router.push('/screens/login')}} />
     </View>
