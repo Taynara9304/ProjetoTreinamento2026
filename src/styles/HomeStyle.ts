@@ -18,9 +18,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   productList: {
-    width: '100%',
-    flexGrow: 0,
-    backgroundColor: 'pink',
+    width: '80%',
+    marginBottom: 20,
+    flex: 1,
+    maxHeight: '40%',
   },
   myProductsButton: {
     width: 150,
@@ -31,7 +32,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 20,
-  }
+  },
+  categoryTextContainer: {
+    flexDirection: 'row',
+    width: '80%',
+    justifyContent: 'space-between',
+  },
+  columnWrapper: {
+    justifyContent: 'center',
+    gap: 10,
+    marginBottom: 10,
+  },
 });
 
 export default styles;

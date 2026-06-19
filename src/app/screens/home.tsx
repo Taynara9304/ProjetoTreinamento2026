@@ -1,10 +1,12 @@
-import { View, Text, TouchableOpacity, FlatList } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, Dimensions } from 'react-native';
 import { useRouter } from 'expo-router';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Button from '../../components/button';
 import styles from '../../styles/HomeStyle';
 import Item from '../../components/item';
 import SearchBar from '../../components/search-bar';
 import { useState } from 'react';
+import CategoryCarousel from '../../components/category-carousel';
 
 interface Product {
     id: string,
@@ -16,7 +18,11 @@ interface Product {
 function Home() {
     const router = useRouter();
 
-    const [itemsFound, setItemsFound] = useState<Product[]>([]);
+    const [name, setName] = useState<string>('Ana');
+    const [itemsFound, setItemsFound] = useState<Product[]>();
+
+    const screenWidth = Dimensions.get('window').width;
+    const numColumns = screenWidth < 360 ? 1 : 2;
 
     const products = [
         {id: '1', name: 'Detergente', description: 'Ypê 200ml', price: 1.5},
@@ -27,43 +33,66 @@ function Home() {
 
     return (
         <View style={styles.container}>
-            <Text>Home</Text>
+
+            {/* Cabeçalho */}
+            <Text>Oi, {name}</Text>
+            <Text>Vamos às compras!</Text>
+            <MaterialCommunityIcons 
+                name="hand-wave-outline" 
+                size={24} 
+                color="#FF6B35" 
+            />
 
             <SearchBar onSearchDone={setItemsFound} />
 
-            <Text>oi</Text>
-            <View style={styles.productList}>
+            {/* Carrossel de categorias */}
+            <View style={styles.categoryTextContainer}>
+                <Text>Categoria</Text>
+                {/*<Text>Ver todas</Text>*/}
+            </View>
+            <CategoryCarousel />
+
+
+            {itemsFound ? <View style={styles.productList}>
                 <FlatList
+                    key={numColumns}
+                    numColumns={numColumns} 
                     keyExtractor={item => item.id}
                     data={itemsFound}
-                    horizontal={true}
                     ListEmptyComponent={<Text>Nenhum produto listado.</Text>}
                     renderItem={({ item }) => (
                         <Item
                             id={item.id}
                             name={item.name}
                             description={item.description}
+                            image={'bom dia'}
                             price={item.price}
                         />
                     )}
+                    {...(numColumns > 1 && { columnWrapperStyle: styles.columnWrapper })}
                 />
             </View>
-
+            : 
             <View style={styles.productList}>
                 <FlatList
+                    key={numColumns}
+                    numColumns={numColumns}
                     keyExtractor={item => item.id}
                     data={products}
-                    horizontal={true}
                     renderItem={({ item }) => (
                         <Item
                             id={item.id}
                             name={item.name}
                             description={item.description}
+                            image={'bom dia'}
                             price={item.price}
                         />
                     )}
+                    {...(numColumns > 1 && { columnWrapperStyle: styles.columnWrapper })}
                 />
             </View>
+
+            }
 
             <TouchableOpacity
                 style={styles.addItemButton}
@@ -84,4 +113,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Home;
