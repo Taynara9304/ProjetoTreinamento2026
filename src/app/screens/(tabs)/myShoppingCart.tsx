@@ -1,7 +1,7 @@
 import { View, Text, FlatList } from 'react-native'
-import Item from '../../components/myItem'
+import Item from '../../../components/myItem'
 
-function MyProducts() {
+function MyShoppingCart() {
     const products = [
         {id: '1', name: 'Detergente', description: 'Ypê 200ml', price: 1.5},
         {id: '2', name: 'Arroz', description: 'Integral 5kg', price: 15},
@@ -11,7 +11,7 @@ function MyProducts() {
 
   return (
     <View>
-      <Text>MyProducts</Text>
+      <Text>MyShoppingCart</Text>
 
       <FlatList
         data={products}
@@ -29,4 +29,4 @@ function MyProducts() {
   )
 }
 
-export default MyProducts
+export default MyShoppingCart;

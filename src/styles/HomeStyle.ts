@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     width: '80%',
     marginBottom: 20,
     flex: 1,
-    maxHeight: '40%',
+    maxHeight: '50%',
   },
   myProductsButton: {
     width: 150,

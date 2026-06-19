@@ -1,12 +1,12 @@
 import { View, Text, TouchableOpacity, FlatList, Dimensions } from 'react-native';
 import { useRouter } from 'expo-router';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import Button from '../../components/button';
-import styles from '../../styles/HomeStyle';
-import Item from '../../components/item';
-import SearchBar from '../../components/search-bar';
+import Button from '../../../components/button';
+import styles from '../../../styles/HomeStyle';
+import Item from '../../../components/item';
+import SearchBar from '../../../components/search-bar';
 import { useState } from 'react';
-import CategoryCarousel from '../../components/category-carousel';
+import CategoryCarousel from '../../../components/category-carousel';
 
 interface Product {
     id: string,
@@ -93,22 +93,6 @@ function Home() {
             </View>
 
             }
-
-            <TouchableOpacity
-                style={styles.addItemButton}
-                onPress={() => {router.push('/screens/registerItem')}}
-            >
-                <Text>+</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-                style={styles.myProductsButton}
-                onPress={() => {router.push('/screens/myProducts')}}
-            >
-                <Text>Ver meus produtos</Text>
-            </TouchableOpacity>
-
-            <Button text='logout' onPress={() => router.replace('/screens/login')} />
         </View>
     )
 }
