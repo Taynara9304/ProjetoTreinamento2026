@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '80%',
     justifyContent: 'space-between',
+    gap: 10,
   },
   columnWrapper: {
     justifyContent: 'center',

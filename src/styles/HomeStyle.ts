@@ -7,6 +7,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
   productList: {
     width: '80%',
     marginBottom: 20,
@@ -16,7 +20,7 @@ const styles = StyleSheet.create({
   categoryTextContainer: {
     flexDirection: 'row',
     width: '80%',
-    justifyContent: 'space-between',
+    marginBottom: 10,
   },
   columnWrapper: {
     justifyContent: 'center',

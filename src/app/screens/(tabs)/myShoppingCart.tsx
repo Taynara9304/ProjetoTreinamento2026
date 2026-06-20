@@ -36,13 +36,15 @@ function MyShoppingCart() {
         />
       </View>
 
-      <View style={styles.priceContainer}>
-          <Text style={{ fontWeight: 700, fontSize: 16}}>Total</Text>
-          <Text style={{ fontWeight: 700, fontSize: 16, color: '#F16A26'}}>R$ {total}</Text>
-      </View>
+      <View style={{ position: 'absolute', bottom: 70, width: '100%' }}>
+        <View style={styles.priceContainer}>
+            <Text style={{ fontWeight: 700, fontSize: 16}}>Total</Text>
+            <Text style={{ fontWeight: 700, fontSize: 16, color: '#F16A26'}}>R$ {total}</Text>
+        </View>
 
-      <View style={{ width: '100%', alignItems: 'center', marginTop: 20, }}>
-        <Button text='Comprar agora' onPress={'bomdia'} />
+        <View style={{ width: '100%', alignItems: 'center', marginTop: 20, }}>
+          <Button text='Comprar agora' onPress={() => {}} />
+        </View>
       </View>
     </View>
   )

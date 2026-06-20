@@ -36,7 +36,7 @@ function MyProducts() {
             </View>
 
             <View style={styles.categoryTextContainer}>
-                <Text>Categoria</Text>
+                <Text style={styles.title}>Categoria</Text>
             </View>
 
             <CategoryCarousel />

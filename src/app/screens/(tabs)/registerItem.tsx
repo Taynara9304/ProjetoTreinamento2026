@@ -29,7 +29,7 @@ function RegisterItem() {
       <Input label='Preço' placeholder='Preço R$' onChange={setPrice} />
       <DropdownInput label='Categoria' placeholder='Selecione uma categoria' options={categorias} onSelect={(valor) => console.log(valor)} />
 
-      <Button text='Anunciar produto' onPress={() => {router.push('/screens/home')}} />
+      <Button text='Anunciar produto' onPress={() => {}} />
     </View>
   )
 }

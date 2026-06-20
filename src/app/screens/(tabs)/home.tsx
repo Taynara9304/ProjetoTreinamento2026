@@ -29,21 +29,28 @@ function Home() {
 
     return (
         <View style={styles.container}>
-            <Text>Oi, {name}</Text>
-            <Text>Vamos às compras!</Text>
-            <MaterialCommunityIcons 
-                name="hand-wave-outline" 
-                size={24} 
-                color="#FF6B35" 
-            />
+            <View style={{ flexDirection: 'row', width: '80%', gap: 10 }}>
+                <Text style={styles.title}>Oi, {name}</Text>
+                <View style={{ justifyContent: 'center'}}>
+                    <MaterialCommunityIcons 
+                        name="hand-wave-outline" 
+                        size={20} 
+                        color="#FF6B35"
+                    />
+                </View>
+            </View>
+            <View style={{ width: '80%' }}>
+                <Text>Vamos às compras!</Text>
+            </View>
 
             <View style={{ width: '80%' }}>
                 <SearchBar onSearchDone={setItemsFound} />
             </View>
 
             <View style={styles.categoryTextContainer}>
-                <Text>Categoria</Text>
+                <Text style={styles.title}>Categorias</Text>
             </View>
+
             <CategoryCarousel />
 
 

@@ -51,7 +51,7 @@ function ProductDetails() {
       </View>
 
       <View style={{ width: '100%', alignItems: 'center', bottom: 20, position: 'absolute'}}>
-        <Button text='Adicionar ao carrinho' onPress={'oi'} />
+        <Button text='Adicionar ao carrinho' onPress={() => {}} />
       </View>
     </View>
   )
