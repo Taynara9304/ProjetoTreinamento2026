@@ -11,6 +11,7 @@ function RootLayout() {
               <Stack.Screen name="screens/emailScreen" options={{title: 'Recuperar senha'}} />
               <Stack.Screen name="screens/recoverPassword" options={{title: 'Crie uma nova senha'}} />
               <Stack.Screen name="screens/registerUser" options={{title: 'Cadastre-se'}} />
+              <Stack.Screen name="screens/productDetails" options={{title: ' '}} />
               <Stack.Screen name="screens/(tabs)" options={{ headerShown: false }} />
           </Stack>
       </SafeAreaView>

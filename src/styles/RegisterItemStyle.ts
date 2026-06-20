@@ -7,6 +7,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  titleContainer: {
+    width: '100%',
+    alignItems: 'center',
+    marginBottom: 40,
+  },
+  title: {
+    fontWeight: 700,
+    fontSize: 18,
+  },
 });
 
 export default styles;

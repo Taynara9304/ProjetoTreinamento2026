@@ -1,5 +1,4 @@
 import { View, Text, TouchableOpacity, FlatList, Dimensions } from 'react-native';
-import { useRouter } from 'expo-router';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Item from '../../../components/item';
 import SearchBar from '../../../components/search-bar';
@@ -15,8 +14,6 @@ interface Product {
 }
 
 function Home() {
-    const router = useRouter();
-
     const [name, setName] = useState<string>('Ana');
     const [itemsFound, setItemsFound] = useState<Product[]>();
 

@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   inputContainer: {
-    width: '60%',
+    width: '80%',
     borderRadius: 10,
     borderColor: 'black',
     borderWidth: 1,
@@ -16,10 +16,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   input: {
-    width: '90%',
+    flex: 1,
   },
   icon: {
-    width: '10%',
+    marginRight: 8,
   },
   text: {
     paddingLeft: 10,

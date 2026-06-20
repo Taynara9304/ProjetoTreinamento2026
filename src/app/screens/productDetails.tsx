@@ -1,6 +1,9 @@
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { View, Text } from 'react-native'
+import { View, Text } from 'react-native';
+import { Image } from 'expo-image';
+import Button from '../../components/button';
+import styles from '../../styles/ProductDetailsStyle';
 
 interface Product {
     id: string,
@@ -11,6 +14,8 @@ interface Product {
 
 function ProductDetails() {
     const [product, setProduct] = useState<Product>();
+
+    const img = require('../../assets/relogio1.png');
 
     const products = [
         {id: '1', name: 'Detergente', description: 'Ypê 200ml', price: 1.5},
@@ -28,11 +33,26 @@ function ProductDetails() {
     }, [])
 
   return (
-    <View>
-      <Text>ProductDetails</Text>
-      <Text>{product?.name}</Text>
-      <Text>{product?.description}</Text>
-      <Text>{product?.price}</Text>
+    <View style={styles.container}>
+      <Image
+        source={img}
+        style={{ width: '100%', height: 400 }}
+      />
+
+      <View style={styles.contentContainer}>
+        <Text style={styles.title}>{product?.name}</Text>
+
+        <Text style={styles.price}>R$ {product?.price}</Text>
+
+        <View style={styles.descriptionContainer}>
+          <Text>Descrição</Text>
+          <Text>{product?.description}</Text>
+        </View>
+      </View>
+
+      <View style={{ width: '100%', alignItems: 'center', bottom: 20, position: 'absolute'}}>
+        <Button text='Adicionar ao carrinho' onPress={'oi'} />
+      </View>
     </View>
   )
 }

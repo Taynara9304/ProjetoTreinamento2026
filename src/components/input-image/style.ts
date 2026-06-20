@@ -2,13 +2,11 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    width: '60%',
-    flexDirection: 'row',
-    borderWidth: 5,
-    borderColor: 'black',
-    borderRadius: 20,
+    width: '80%',
+    borderRadius: 10,
     alignItems: 'center',
-    gap: 10,
+    justifyContent: 'center',
+    marginBottom: 20,
   },
   image: {
     width: 50,
@@ -21,17 +19,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 20,
   },
-  button: {
-    backgroundColor: '#4630EB',
-    paddingVertical: 14,
-    paddingHorizontal: 28,
-    borderRadius: 8,
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
   previewContainer: {
     marginTop: 20,
     alignItems: 'center',
@@ -42,7 +29,7 @@ const styles = StyleSheet.create({
     color: '#666',
   },
   removeButton: {
-    backgroundColor: '#FF3B30', // Cor vermelha para indicar exclusão/remoção
+    backgroundColor: '#FF3B30',
     padding: 5,
     paddingVertical: 0,
     borderRadius: 8,
@@ -52,6 +39,17 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 14,
     fontWeight: 'bold',
+  },
+  selectButton: {
+    borderWidth: 1,
+    borderColor: 'black',
+    borderRadius: 8,
+    padding: 20,
+    alignItems: 'center',
+    width: '100%',
+  },
+  scrollContainer: {
+    flexDirection: 'row',
   },
 });
 
