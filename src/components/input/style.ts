@@ -6,10 +6,11 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: '60%',
-    borderRadius: 20,
+    borderRadius: 10,
     borderColor: 'black',
-    borderWidth: 5,
+    borderWidth: 1,
     paddingHorizontal: 10,
+    paddingVertical: 5,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',

@@ -12,7 +12,7 @@ function Button({ text, onPress }: ButtonProp) {
         style={styles.container}
         onPress={onPress}
     >
-        <Text>{text}</Text>
+        <Text style={{ color: 'white', fontWeight: 700 }}>{text}</Text>
     </TouchableOpacity>
   )
 }

@@ -13,12 +13,10 @@ export default function Login() {
 
   return (
     <View style={styles.container}>
-      <Text>Faça login</Text>
-
       <Input label='Email' placeholder="Digite seu email" onChange={setEmail} icon='mail-outline' />
       <Input label='Senha' placeholder="Digite sua senha" onChange={setPassword} icon='lock-closed-outline' />
 
-      <Link href={'/screens/recoverPassword'} >Esqueceu a senha? Clique aqui!</Link>
+      <Link href={'/screens/emailScreen'} >Esqueceu a senha? Clique aqui!</Link>
 
       <Button text="Fazer login"  onPress={() => {router.replace('/screens/home')}} />
       <Button text="Criar conta" onPress={() => {router.push('/screens/registerUser')}} />

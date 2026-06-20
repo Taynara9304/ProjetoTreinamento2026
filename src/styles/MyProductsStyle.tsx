@@ -6,6 +6,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: 40,
+  },
+  titleContainer: {
+    width: '100%',
+    alignItems: 'flex-start',
+    paddingLeft: 20,
+  },
+  title: {
+    fontWeight: 700,
+    fontSize: 18,
   },
   productList: {
     width: '80%',

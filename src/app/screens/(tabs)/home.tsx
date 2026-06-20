@@ -1,12 +1,11 @@
 import { View, Text, TouchableOpacity, FlatList, Dimensions } from 'react-native';
 import { useRouter } from 'expo-router';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import Button from '../../../components/button';
-import styles from '../../../styles/HomeStyle';
 import Item from '../../../components/item';
 import SearchBar from '../../../components/search-bar';
 import { useState } from 'react';
 import CategoryCarousel from '../../../components/category-carousel';
+import styles from '../../../styles/HomeStyle';
 
 interface Product {
     id: string,
@@ -33,8 +32,6 @@ function Home() {
 
     return (
         <View style={styles.container}>
-
-            {/* Cabeçalho */}
             <Text>Oi, {name}</Text>
             <Text>Vamos às compras!</Text>
             <MaterialCommunityIcons 
@@ -43,12 +40,12 @@ function Home() {
                 color="#FF6B35" 
             />
 
-            <SearchBar onSearchDone={setItemsFound} />
+            <View style={{ width: '80%' }}>
+                <SearchBar onSearchDone={setItemsFound} />
+            </View>
 
-            {/* Carrossel de categorias */}
             <View style={styles.categoryTextContainer}>
                 <Text>Categoria</Text>
-                {/*<Text>Ver todas</Text>*/}
             </View>
             <CategoryCarousel />
 

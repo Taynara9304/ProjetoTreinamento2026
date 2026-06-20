@@ -13,7 +13,6 @@ function RecoverPassword() {
 
   return (
     <View style={styles.container}>
-      <Text>RecoverPassword</Text>
       <Input label="Nova senha" placeholder='Digite sua nova senha' onChange={setNewPassword} icon='lock-closed-outline' />
       <Input label='Confirmação de senha' placeholder="Confirme sua senha" onChange={setPasswordConfirmation} icon='lock-closed-outline' />
       <Button text='Redefinir' onPress={() => {router.replace('/screens/home')}} />
